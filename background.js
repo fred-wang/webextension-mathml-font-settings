@@ -5,7 +5,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 let gOptions = null, gDefaultOptions = {
-  mathFontFamilyList: "Asana Math, Cambria Math, Latin Modern Math, Libertinus Math, Lucida Bright Math, Minion Math, STIX Math, TeX Gyre Bonum Math, TeX Gyre Pagella Math, TeX Gyre Schola Math, TeX Gyre Termes Math, XITS Math",
+  mathFontFamilyList: "Asana Math, Cambria Math, DejaVu Math TeX Gyre, Latin Modern Math, Libertinus Math, Lucida Bright Math, Minion Math, STIX Two Math, TeX Gyre Bonum Math, TeX Gyre Pagella Math, TeX Gyre Schola Math, TeX Gyre Termes Math, XITS Math",
   mathFontFamily: "",
   mathFontScale: 100,
   mathFontImportant: true
