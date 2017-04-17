@@ -1,0 +1,28 @@
+{
+    "mathFontSettings": {
+        "message": "Configuração de Fontes MathML"
+    },
+    "mathFontFamily_title": {
+        "message": "Família de Fontes"
+    },
+    "mathFontFamily_description": {
+        "message": "Fontes a ser utilizada para fórmulas matemáticas. Deixe em branco para utilizar a fonte padrão."
+    },
+    "mathFontFamily_default": {
+        "message": "Padrão"
+    },
+    "mathFontScale_title": {
+        "message": "Escala de Fonte"
+    },
+    "mathFontScale_description": {
+        "message": "Fator de escala (em porcentagem) a ser aplicado nas fórmulas matemáticas."
+    },
+    "mathFontImportant_title": {
+        "message": "Utilizar regra 'important'",
+        "description": "Localization note: 'important' is a CSS term, do not translate it."
+    },
+    "mathFontImportant_description": {
+        "message": "Se essa opção estiver habilitada, as regras de CSS adicionadas por esta extensão serão marcadas como 'important' para tentar sobrescrever o estila da página.",
+        "description": "Localization note: 'important' is a CSS term, do not translate it."
+    }
+}

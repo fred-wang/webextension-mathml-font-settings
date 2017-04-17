@@ -1,0 +1,37 @@
+{
+    "mathFontSettings": {
+        "message": "Police MathML"
+    },
+    "mathFontFamilyList_title": {
+        "message": "Liste de polices"
+    },
+    "mathFontFamilyList_description": {
+        "message": "Liste de polices à afficher dans le menu contextuel."
+    },
+    "mathFontFamily_title": {
+        "message": "Famille de police"
+    },
+    "mathFontFamily_description": {
+        "message": "Police à utiliser pour les formules mathématiques. Laissez ce champs vide pour utiliser la valeur par défaut."
+    },
+    "mathFontFamily_default": {
+        "message": "Défaut"
+    },
+    "mathFontScale_title": {
+        "message": "Facteur de mise à l'échelle"
+    },
+    "mathFontScale_description": {
+        "message": "Facteur de mise à l'échelle (en pourcentage) à appliquer aux formules mathématiques."
+    },
+    "mathFontImportant_title": {
+        "message": "Utiliser les règles 'important'",
+        "description": "Localization note: 'important' is a CSS term, do not translate it."
+    },
+    "mathFontImportant_description": {
+        "message": "Si cette option est activée, les règles CSS ajourées par l'extension seront marquées 'important' pour essayer d'être prioritaire sur le style de la page.",
+        "description": "Localization note: 'important' is a CSS term, do not translate it."
+    },
+    "save": {
+        "message": "Enregistrer"
+    }
+}
