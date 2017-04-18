@@ -16,7 +16,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "permissions": ["storage"],
+  "permissions": ["<all_urls>","storage"],
   "applications": {
     "gecko": {
       "id": "jid1-EQE4AIXPwNXvEA@jetpack"

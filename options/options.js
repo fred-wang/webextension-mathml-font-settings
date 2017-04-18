@@ -26,6 +26,7 @@ function loadOptions() {
     el("mathFontFamily").value = aOptions.mathFontFamily;
     el("mathFontScale").value = aOptions.mathFontScale;
     el("mathFontImportant").checked = aOptions.mathFontImportant;
+    el("options").addEventListener("submit", saveOptions);
   });
 }
 
