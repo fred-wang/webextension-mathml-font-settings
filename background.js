@@ -11,6 +11,12 @@ let gOptions = null, gDefaultOptions = {
   mathFontImportant: true
 };
 
+// List of font scale factors proposed in the context menu.
+let gMathFontScaleFactors = [];
+for (let maxI = 4, i = -maxI; i <= maxI; i++) {
+  gMathFontScaleFactors.push(Math.round(100 * Math.pow(2, i/maxI)));
+}
+
 function initializeOptions() {
   // Nothing to do if it's already initialized.
   if (gOptions !== null)
@@ -31,6 +37,15 @@ function initializeOptions() {
           gOptions[key] = aChanges[key].newValue;
       }
       updateInsertedCSSInAllTabs();
+      if (aChanges.hasOwnProperty("mathFontFamilyList")) {
+        let oldValue = aChanges.mathFontFamilyList.oldValue;
+        removeFontFamilyMenuItems(oldValue).then(createFontFamilyMenuItems);
+      } else if (aChanges.hasOwnProperty("mathFontFamily")) {
+        updateFontFamilyMenuItems();
+      }
+      if (aChanges.hasOwnProperty("mathFontScale")) {
+        updateFontScaleMenuItems();
+      }
     });
   });
 }
@@ -104,4 +119,101 @@ updateInsertedCSSInAllTabs().then(function() {
       insertCSS(tab);
     }
   });
+});
+
+function fontFamilyListAsArray(aMathFontFamilyList) {
+  let mathFonts = aMathFontFamilyList.split(",");
+  for (let i = 0; i < mathFonts.length; i++)
+    mathFonts[i] = mathFonts[i].trim();
+  return mathFonts;
+}
+
+function createFontFamilyMenuItems() {
+  browser.contextMenus.create({
+    id: "mathFontFamily_default",
+    parentId: "mathFontFamily",
+    type: "radio",
+    title: browser.i18n.getMessage("mathFontFamily_default"),
+    checked: gOptions.mathFontFamily === "",
+    onclick: function() {
+      browser.storage.local.set({mathFontFamily: ""});
+    }
+  });
+  let mathFonts = fontFamilyListAsArray(gOptions.mathFontFamilyList);
+  for (let i = 0; i < mathFonts.length; i++) {
+    let fontFamily = mathFonts[i];
+    browser.contextMenus.create({
+      id: "mathFontFamily_" + i,
+      parentId: "mathFontFamily",
+      type: "radio",
+      title: fontFamily,
+      checked: gOptions.mathFontFamily === fontFamily,
+      onclick: function() {
+        browser.storage.local.set({mathFontFamily: fontFamily});
+      }
+    });
+  }
+}
+
+function removeFontFamilyMenuItems(aOldMathFontFamilyList) {
+  let removePromises = [browser.contextMenus.remove("mathFontFamily_default")];
+  let mathFonts = fontFamilyListAsArray(aOldMathFontFamilyList);
+  for (let i = 0; i < mathFonts.length; i++) {
+    let remove = browser.contextMenus.remove("mathFontFamily_" + i);
+    removePromises.push(remove);
+  }
+  return Promise.all(removePromises);
+}
+
+function updateFontFamilyMenuItems() {
+  browser.contextMenus.update("mathFontFamily_default", {
+    checked: gOptions.mathFontFamily === ""
+  });
+  let mathFonts = fontFamilyListAsArray(gOptions.mathFontFamilyList);
+  for (let i = 0; i < mathFonts.length; i++) {
+    browser.contextMenus.update("mathFontFamily_" + i, {
+      checked: gOptions.mathFontFamily === mathFonts[i]
+    });
+  }
+}
+
+function createFontScaleMenuItems() {
+  for (let i = 0; i < gMathFontScaleFactors.length; i++) {
+    let scale = gMathFontScaleFactors[i];
+    browser.contextMenus.create({
+      id: "mathFontScale_" + i,
+      parentId: "mathFontScale",
+      type: "radio",
+      title: scale + "%",
+      checked: gOptions.mathFontScale == scale,
+      onclick: function() {
+        browser.storage.local.set({mathFontScale: scale});
+      }
+    });
+  };
+}
+
+function updateFontScaleMenuItems() {
+  for (let i = 0; i < gMathFontScaleFactors.length; i++) {
+    let scale = gMathFontScaleFactors[i];
+    browser.contextMenus.update("mathFontScale_" + i, {
+      checked: gOptions.mathFontScale == scale
+    });
+  }
+}
+
+// Create the initial context menu.
+initializeOptions().then(function() {
+  browser.contextMenus.create({
+    id: "mathFontFamily",
+    type: "normal",
+    title: browser.i18n.getMessage("mathFontFamily_title"),
+  });
+  createFontFamilyMenuItems();
+  browser.contextMenus.create({
+    id: "mathFontScale",
+    type: "normal",
+    title: browser.i18n.getMessage("mathFontScale_title")
+  });
+  createFontScaleMenuItems();
 });
