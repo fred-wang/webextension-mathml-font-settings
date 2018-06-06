@@ -1,0 +1,37 @@
+{
+    "mathFontSettings": {
+        "message": "MathML Font Settings"
+    },
+    "mathFontFamilyList_title": {
+        "message": "Font Family List"
+    },
+    "mathFontFamilyList_description": {
+        "message": "List of font families to display in the context menu."
+    },
+    "mathFontFamily_title": {
+        "message": "Font Family"
+    },
+    "mathFontFamily_description": {
+        "message": "Font to use for the mathematical formulas. Leave empty to use the default value."
+    },
+    "mathFontFamily_default": {
+        "message": "Default"
+    },
+    "mathFontScale_title": {
+        "message": "Font Scale"
+    },
+    "mathFontScale_description": {
+        "message": "Scale factor (in percent) to apply to the mathematical formulas."
+    },
+    "mathFontImportant_title": {
+        "message": "Use 'important' rules",
+        "description": "'important' is a CSS term, do not translate it."
+    },
+    "mathFontImportant_description": {
+        "message": "If this option is enabled, the CSS rules added by the add-on will be marked 'important' to try to override the page style.",
+        "description": "'important' is a CSS term, do not translate it."
+    },
+    "save": {
+        "message": "Save"
+    }
+}
