@@ -1,37 +1,37 @@
 {
     "mathFontSettings": {
-        "message": "MathML Font Settings"
+        "message": "Impostazioni MathML Font"
     },
     "mathFontFamilyList_title": {
-        "message": "Font Family List"
+        "message": "Lista dei Font Family"
     },
     "mathFontFamilyList_description": {
-        "message": "List of font families to display in the context menu."
+        "message": "Lista dei Font Family da mostrare nel menu contestuale."
     },
     "mathFontFamily_title": {
         "message": "Font Family"
     },
     "mathFontFamily_description": {
-        "message": "Font to use for the mathematical formulas. Leave empty to use the default value."
+        "message": "Font da usare per le formule matematiche. Lasciare vuoto per usare il valore predefinito."
     },
     "mathFontFamily_default": {
-        "message": "Default"
+        "message": "Valore Predefinito"
     },
     "mathFontScale_title": {
-        "message": "Font Scale"
+        "message": "Scala del Font"
     },
     "mathFontScale_description": {
-        "message": "Scale factor (in percent) to apply to the mathematical formulas."
+        "message": "Scala (in percentuale) da applicare alle formule matematiche."
     },
     "mathFontImportant_title": {
-        "message": "Use 'important' rules",
-        "description": "'important' is a CSS term, do not translate it."
+        "message": "Usa 'important' nelle regole",
+        "description": "'important' è un termine CSS. Non tradurre."
     },
     "mathFontImportant_description": {
-        "message": "If this option is enabled, the CSS rules added by the add-on will be marked 'important' to try to override the page style.",
-        "description": "'important' is a CSS term, do not translate it."
+        "message": "Se questa impostazione è attiva, le regole CSS aggiunte dall'add-on useranno la parola chiave 'important' per cercare di sovrascrivere lo stile della pagina.",
+        "description": "''important' è un termine CSS. Non tradurre."
     },
     "save": {
-        "message": "Save"
+        "message": "Salva"
     }
 }
