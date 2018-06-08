@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "MathML Font Settings",
-  "version": "0.3.1",
-    "description": "Add context menu items to configure MathML font settings.",
+  "version": "0.3.2",
+  "description": "Add context menu items to configure MathML font settings.",
   "author": "Frédéric Wang",
   "homepage_url": "https://github.com/fred-wang/webextension-mathml-font-settings",
   "icons": {
